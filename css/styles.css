@@ -73,6 +73,7 @@ h2, h3, h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
        
 }
 .food-card img {
@@ -81,6 +82,16 @@ h2, h3, h4 {
     margin: 17px 14px 0 15px;
     border-radius: 4px;
     /* ATENÇÃO À BORDA/TAMANHO DAS IMGS!!!!!!!!!!!!!!! */
+}
+
+.food-card ion-icon {
+    width: 80px;
+    height: 80px;
+    color: #32B72F;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 50;
 }
 
 .food-card h2 { /* food name */
@@ -189,3 +200,8 @@ h2, h3, h4 {
 
 
 /*  =====   BOTTOM-RIBBON  ===== */
+
+
+.checked-card {
+    border: 5px solid #32B72F;
+}

@@ -15,6 +15,8 @@
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/styles.css" />
 
+        <script src="scripts/scripts.js"></script>
+
         <title>DrivenEats</title>
     </head>
 
@@ -44,6 +46,7 @@
                         <h2>Carne de Sol</h2>
                         <h3>Macaxeira cozida, carne de sol e queijo coalho assados</h3>
                         <h4>R$ 20,90</h4>
+                        <ion-icon name="checkmark-circle"></ion-icon>
                     </div>
 
                     <div class="food-card">
@@ -104,7 +107,7 @@
             <div class="desserts">
                 <h1> Por fim, sua sobremesa</h1>
                 <div class="horiz-list">
-                    <div class="food-card">
+                    <div class="food-card" onclick="markChecked(this)">
                         <img src="images/pudim.png" alt="yin yang chicken">
                         <h2>Pudim</h2>
                         <h3>Apenas pudim</h3>
@@ -150,6 +153,11 @@
         </div>
         <!-- BOTTOM-RIBBON -->
 
+
+        <!-- JS para ion-icons -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <!-- JS para ion-icons -->
 
     </body>
 
