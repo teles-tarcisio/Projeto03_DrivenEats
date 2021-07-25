@@ -87,12 +87,10 @@ h2, h3, h4 {
 .food-card ion-icon {
     font-size: 19px;
     border-radius: 50%;
-    background-color: black;
     color: #32B72F;
     position: absolute;
     bottom: 14px;
     right: 14px;
-    z-index: 40;
 }
 
 .food-card h2 { /* food name */
