@@ -105,6 +105,9 @@ h2, h3, h4 {
     font-weight: 300;
     font-size: 15px;
     color: #a6a6a6;
+    max-width: 144px;
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
 
 .food-card h4 { /* price */
