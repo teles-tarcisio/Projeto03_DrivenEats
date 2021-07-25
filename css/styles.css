@@ -191,6 +191,20 @@ h2, h3, h4 {
     font-size: 20px;
 }
 
+.place-order {
+    width: 364px;
+    height: 61px;
+    border-radius: 50px;
+    background-color: #32b72f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.place-order button {
+    border: none;
+    background-color: transparent;
+}
 
 /*  =====   BOTTOM-RIBBON  ===== */
 
