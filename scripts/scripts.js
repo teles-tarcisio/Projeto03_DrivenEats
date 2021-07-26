@@ -8,15 +8,19 @@ function markChecked(element) {
       let marcadoAntes = father.querySelector(".selected-card");
 
       if (marcadoAntes !== null) {
-         //contador--;
-         //comida = "";
-         //total -+ precoComida;
          marcadoAntes.classList.remove("selected-card");
          marcadoAntes.querySelector("ion-icon").classList.add("hidden");
       }
-      //contador++;
       element.classList.add("selected-card");
       element.querySelector("ion-icon").classList.remove("hidden");
+   }
+
+   let dish = (document.querySelector(".dishes .selected-card") !== null);
+   let beverage = (document.querySelector(".beverages .selected-card") !== null);
+   let dessert = (document.querySelector(".desserts .selected-card") !== null);
+
+   if (dish && beverage && dessert) {
+      alert("3 ITENS OK");
    }
 
    }
