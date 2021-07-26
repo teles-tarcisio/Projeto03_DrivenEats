@@ -18,7 +18,7 @@ function markChecked(element) {
       element.querySelector("ion-icon").classList.remove("hidden");
    }
    
-   /* TODO: divide in more functions! */
+   
 
    checkThreeSelected();
       
@@ -46,6 +46,8 @@ let dishPrice, bevPrice, dessPrice;*/
 <input type="button" onclick="location.href='https://google.com';" value="Go to Google" />
 */
 
+/* TODO: break in smaller functions! */
+
 function placeOrder() {
    //location.href=encodeURI("https://wa.me/5581991689732?text=MSG_DE_TESTE_DrivenEats");
 
@@ -61,18 +63,27 @@ function placeOrder() {
    let dishPrice = chosenDish.querySelector("h4").innerHTML;
    let beveragePrice = chosenBeverage.querySelector("h4").innerHTML;
    let dessertPrice = chosenDessert.querySelector("h4").innerHTML;
-   console.log(dishPrice + "+" + beveragePrice + "+" + dessertPrice);
-
+   
    const regex = /\D/g;
-   dishPrice = dishPrice.replaceAll(regex, '');
-   beveragePrice = beveragePrice.replaceAll(regex, '');
-   dessertPrice = dessertPrice.replaceAll(regex, '');
-   console.log(dishPrice + "+" + beveragePrice + "+" + dessertPrice);
+   dishPrice = dishPrice.replaceAll(regex, '');   //.toFixed(2);
+   beveragePrice = beveragePrice.replaceAll(regex, '');  //.toFixed(2);
+   dessertPrice = dessertPrice.replaceAll(regex, '')  //.toFixed(2);
+   
+   let price1 = parseFloat(dishPrice)/100;
+   let price2 = parseFloat(beveragePrice)/100;
+   let price3 = parseFloat(dessertPrice)/100;
+   console.log(price1 + " + " + price2 + " + " + price3);
 
-   dishPrice = (parseFloat(dishPrice)/100).toFixed(2);
-   beveragePrice = (parseFloat(beveragePrice)/100).toFixed(2);
-   dessertPrice = (parseFloat(dessertPrice)/100).toFixed(2);
+   let finalPrice = price1 + price2 + price3;
+   console.log("valor R$ " + finalPrice);
 
-   console.log(dishPrice + "+" + beveragePrice + "+" + dessertPrice);
+   let finalMessage = "Olá, gostaria de fazer o pedido:\n" +
+   `- Prato: ${dishName}\n` +
+   `- Bebida: ${beverageName}\n` +
+   `- Sobremesa: ${dessertName}\n` +
+   `Total: R$ ${finalPrice}`;
 
+   alert(finalMessage);
+   finalMessage = "https://wa.me/5581991689732?text=" + finalMessage;
+   location.href=encodeURI(finalMessage);
 }
