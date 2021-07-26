@@ -39,9 +39,6 @@ function checkThreeSelected() {
    }
 }
 
-/*//global variables:
-let dishPrice, bevPrice, dessPrice;*/
-
 /* button as html link:
 <input type="button" onclick="location.href='https://google.com';" value="Go to Google" />
 */
@@ -49,22 +46,24 @@ let dishPrice, bevPrice, dessPrice;*/
 /* TODO: break in smaller functions! */
 
 function placeOrder() {
-   //location.href=encodeURI("https://wa.me/5581991689732?text=MSG_DE_TESTE_DrivenEats");
-
+   /*
+   location.href=encodeURI("https://wa.me/5581991689732?text=MSG_DE_TESTE_DrivenEats");
    let chosenDish = document.querySelector(".dishes .selected-card");
    let chosenBeverage = document.querySelector(".beverages .selected-card");
    let chosenDessert = document.querySelector(".desserts .selected-card");
+   */
 
-   let dishName = chosenDish.querySelector("h2").innerHTML;
-   let beverageName = chosenBeverage.querySelector("h2").innerHTML;
-   let dessertName = chosenDessert.querySelector("h2").innerHTML;
-   console.log(dishName + "+" + beverageName + "+" + dessertName);
+   let dishName = document.querySelector(".dishes .selected-card h2").innerHTML;
+   let beverageName = document.querySelector(".beverages .selected-card h2").innerHTML;
+   let dessertName = document.querySelector(".desserts .selected-card h2").innerHTML;
+   console.log(dishName + " + " + beverageName + " + " + dessertName);
 
-   let dishPrice = chosenDish.querySelector("h4").innerHTML;
-   let beveragePrice = chosenBeverage.querySelector("h4").innerHTML;
-   let dessertPrice = chosenDessert.querySelector("h4").innerHTML;
+   let dishPrice = document.querySelector(".dishes .selected-card h4").innerHTML;
+   let beveragePrice = document.querySelector(".beverages .selected-card h4").innerHTML;
+   let dessertPrice = document.querySelector(".desserts .selected-card h4").innerHTML;
    
-   const regex = /\D/g;
+   const regex = /\D/g; //non-digit regex (nivea)
+   //overwriting strings, removing non-digits:
    dishPrice = dishPrice.replaceAll(regex, '');
    beveragePrice = beveragePrice.replaceAll(regex, '');
    dessertPrice = dessertPrice.replaceAll(regex, '');
