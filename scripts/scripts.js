@@ -6,9 +6,9 @@ function markChecked(element) {
    }
    // proceeding:
    else {
-      let father = element.parentNode; //get parent
+      const father = element.parentNode; //get parent
       //checks if any is previously selected:
-      let prevSelected = father.querySelector(".selected-card");
+      const prevSelected = father.querySelector(".selected-card");
       if (prevSelected !== null) {
          prevSelected.classList.remove("selected-card");
          prevSelected.querySelector("ion-icon").classList.add("hidden");
@@ -23,9 +23,9 @@ function markChecked(element) {
 
 function checkThreeSelected() {
    //booleans to test later
-   let dishIsSelected = (document.querySelector(".dishes .selected-card") !== null);
-   let beverageIsSelected = (document.querySelector(".beverages .selected-card") !== null);
-   let dessertIsSelected = (document.querySelector(".desserts .selected-card") !== null);
+   const dishIsSelected = (document.querySelector(".dishes .selected-card") !== null);
+   const beverageIsSelected = (document.querySelector(".beverages .selected-card") !== null);
+   const dessertIsSelected = (document.querySelector(".desserts .selected-card") !== null);
    
    if (dishIsSelected && beverageIsSelected && dessertIsSelected) { //3 selected
       document.querySelector(".pending-choice").classList.add("hidden");
@@ -51,9 +51,9 @@ function placeOrder() {
    let chosenDessert = document.querySelector(".desserts .selected-card");
    */
 
-   let dishName = document.querySelector(".dishes .selected-card h2").innerHTML;
-   let beverageName = document.querySelector(".beverages .selected-card h2").innerHTML;
-   let dessertName = document.querySelector(".desserts .selected-card h2").innerHTML;
+   const dishName = document.querySelector(".dishes .selected-card h2").innerHTML;
+   const beverageName = document.querySelector(".beverages .selected-card h2").innerHTML;
+   const dessertName = document.querySelector(".desserts .selected-card h2").innerHTML;
    console.log(dishName + " + " + beverageName + " + " + dessertName);
 
    let dishPrice = document.querySelector(".dishes .selected-card h4").innerHTML;
@@ -67,9 +67,9 @@ function placeOrder() {
    dessertPrice = dessertPrice.replaceAll(regex, '');
    
    //getting correct decimals (not a nice way)
-   let price1 = parseFloat(dishPrice)/100;
-   let price2 = parseFloat(beveragePrice)/100;
-   let price3 = parseFloat(dessertPrice)/100;
+   const price1 = parseFloat(dishPrice)/100;
+   const price2 = parseFloat(beveragePrice)/100;
+   const price3 = parseFloat(dessertPrice)/100;
    console.log(price1 + " + " + price2 + " + " + price3);
 
    let finalPrice = (price1 + price2 + price3).toFixed(2);
