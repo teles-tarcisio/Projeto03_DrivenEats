@@ -49,9 +49,30 @@ let dishPrice, bevPrice, dessPrice;*/
 function placeOrder() {
    //location.href=encodeURI("https://wa.me/5581991689732?text=MSG_DE_TESTE_DrivenEats");
 
-   let chosenDish = document.querySelector(".dishes .selected-card h2").innerHTML;
-   let chosenBeverage = document.querySelector(".beverages .selected-card h2").innerHTML;
-   let chosenDessert = document.querySelector(".desserts .selected-card h2").innerHTML;
-   console.log(chosenDish + "+" + chosenBeverage + "+" + chosenDessert);
-   
+   let chosenDish = document.querySelector(".dishes .selected-card");
+   let chosenBeverage = document.querySelector(".beverages .selected-card");
+   let chosenDessert = document.querySelector(".desserts .selected-card");
+
+   let dishName = chosenDish.querySelector("h2").innerHTML;
+   let beverageName = chosenBeverage.querySelector("h2").innerHTML;
+   let dessertName = chosenDessert.querySelector("h2").innerHTML;
+   console.log(dishName + "+" + beverageName + "+" + dessertName);
+
+   let dishPrice = chosenDish.querySelector("h4").innerHTML;
+   let beveragePrice = chosenBeverage.querySelector("h4").innerHTML;
+   let dessertPrice = chosenDessert.querySelector("h4").innerHTML;
+   console.log(dishPrice + "+" + beveragePrice + "+" + dessertPrice);
+
+   const regex = /\D/g;
+   dishPrice = dishPrice.replaceAll(regex, '');
+   beveragePrice = beveragePrice.replaceAll(regex, '');
+   dessertPrice = dessertPrice.replaceAll(regex, '');
+   console.log(dishPrice + "+" + beveragePrice + "+" + dessertPrice);
+
+   dishPrice = (parseFloat(dishPrice)/100).toFixed(2);
+   beveragePrice = (parseFloat(beveragePrice)/100).toFixed(2);
+   dessertPrice = (parseFloat(dessertPrice)/100).toFixed(2);
+
+   console.log(dishPrice + "+" + beveragePrice + "+" + dessertPrice);
+
 }
