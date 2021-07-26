@@ -65,16 +65,16 @@ function placeOrder() {
    let dessertPrice = chosenDessert.querySelector("h4").innerHTML;
    
    const regex = /\D/g;
-   dishPrice = dishPrice.replaceAll(regex, '');   //.toFixed(2);
-   beveragePrice = beveragePrice.replaceAll(regex, '');  //.toFixed(2);
-   dessertPrice = dessertPrice.replaceAll(regex, '')  //.toFixed(2);
+   dishPrice = dishPrice.replaceAll(regex, '');
+   beveragePrice = beveragePrice.replaceAll(regex, '');
+   dessertPrice = dessertPrice.replaceAll(regex, '');
    
    let price1 = parseFloat(dishPrice)/100;
    let price2 = parseFloat(beveragePrice)/100;
    let price3 = parseFloat(dessertPrice)/100;
    console.log(price1 + " + " + price2 + " + " + price3);
 
-   let finalPrice = price1 + price2 + price3;
+   let finalPrice = (price1 + price2 + price3).toFixed(2);
    console.log("valor R$ " + finalPrice);
 
    let finalMessage = "Olá, gostaria de fazer o pedido:\n" +
@@ -83,6 +83,7 @@ function placeOrder() {
    `- Sobremesa: ${dessertName}\n` +
    `Total: R$ ${finalPrice}`;
 
+   //console.log(finalMessage);
    alert(finalMessage);
    finalMessage = "https://wa.me/5581991689732?text=" + finalMessage;
    location.href=encodeURI(finalMessage);
