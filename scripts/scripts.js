@@ -30,6 +30,14 @@ function markChecked(element) {
       document.querySelector(".place-order").classList.add("hidden");
 
    }
-   
-   
-   }
+      
+}
+
+
+/* button as html link:
+<input type="button" onclick="location.href='https://google.com';" value="Go to Google" />
+*/
+function placeOrder() {
+   //encodeURI("https://wa.me/5581991689732?text=TESTING_MSG");
+   location.href=encodeURI("https://wa.me/5581992521151?text=MSG_DE_TESTE_DrivenEats(pode apagar)");
+}

@@ -170,7 +170,8 @@ h2, h3, h4 {
     width: 414px;
     height: 92px;
     background-color: #ffffff;
-    color: orange;
+    color: yellow;
+    font-family: 'Roboto', sans-serif;
     z-index: 30;
     display: flex;
     justify-content: center;
@@ -207,6 +208,9 @@ h2, h3, h4 {
 .place-order button {
     border: none;
     background-color: transparent;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
 }
 
 /*  =====   BOTTOM-RIBBON  ===== */
