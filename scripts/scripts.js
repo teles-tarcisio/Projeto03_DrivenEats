@@ -14,13 +14,22 @@ function markChecked(element) {
       element.classList.add("selected-card");
       element.querySelector("ion-icon").classList.remove("hidden");
    }
+   
+   /* TODO: divide in more functions! */
 
    let dish = (document.querySelector(".dishes .selected-card") !== null);
    let beverage = (document.querySelector(".beverages .selected-card") !== null);
    let dessert = (document.querySelector(".desserts .selected-card") !== null);
-
-   if (dish && beverage && dessert) {
-      alert("3 ITENS OK");
+   
+   if (dish && beverage && dessert) { //3 selected
+      document.querySelector(".pending-choice").classList.add("hidden");
+      document.querySelector(".place-order").classList.remove("hidden");
    }
+   else { //less than 3 selected
+      document.querySelector(".pending-choice").classList.remove("hidden");
+      document.querySelector(".place-order").classList.add("hidden");
 
+   }
+   
+   
    }
