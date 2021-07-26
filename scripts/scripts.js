@@ -17,14 +17,12 @@ function markChecked(element) {
       element.classList.add("selected-card");
       element.querySelector("ion-icon").classList.remove("hidden");
    }
-   
-   
 
-   checkThreeSelected();
-      
+   checkThreeSelected();      
 }
 
 function checkThreeSelected() {
+   //booleans to test later
    let dishIsSelected = (document.querySelector(".dishes .selected-card") !== null);
    let beverageIsSelected = (document.querySelector(".beverages .selected-card") !== null);
    let dessertIsSelected = (document.querySelector(".desserts .selected-card") !== null);
@@ -43,8 +41,8 @@ function checkThreeSelected() {
 <input type="button" onclick="location.href='https://google.com';" value="Go to Google" />
 */
 
-/* TODO: break in smaller functions! */
 
+/* TODO: break in smaller functions! */
 function placeOrder() {
    /*
    location.href=encodeURI("https://wa.me/5581991689732?text=MSG_DE_TESTE_DrivenEats");
@@ -68,6 +66,7 @@ function placeOrder() {
    beveragePrice = beveragePrice.replaceAll(regex, '');
    dessertPrice = dessertPrice.replaceAll(regex, '');
    
+   //getting correct decimals (not a nice way)
    let price1 = parseFloat(dishPrice)/100;
    let price2 = parseFloat(beveragePrice)/100;
    let price3 = parseFloat(dessertPrice)/100;

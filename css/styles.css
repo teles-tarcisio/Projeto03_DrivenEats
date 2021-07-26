@@ -117,6 +117,14 @@ h2, h3, h4 {
     color: #000000;
 }
 
+.selected-card {
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F;
+}
+
+.hidden {
+    display: none;
+}
+
 /*  =====   GENERIC ELEMENTS  ===== */
 
 
@@ -186,7 +194,6 @@ h2, h3, h4 {
     background-color: #cbcbcb;
     display: flex;
 }
-
 .pending-choice h3 {
     max-width: 200px;
     color: #ffffff;
@@ -204,7 +211,6 @@ h2, h3, h4 {
     align-items: center;
     justify-content: center;
 }
-
 .place-order button {
     border: none;
     background-color: transparent;
@@ -214,12 +220,3 @@ h2, h3, h4 {
 }
 
 /*  =====   BOTTOM-RIBBON  ===== */
-
-
-.selected-card {
-    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F;
-}
-
-.hidden {
-    display: none;
-}
