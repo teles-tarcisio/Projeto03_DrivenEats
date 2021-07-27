@@ -41,49 +41,56 @@ function checkThreeSelected() {
 <input type="button" onclick="location.href='https://google.com';" value="Go to Google" />
 */
 
+function getItemName(itemCategory) {
+   return document.querySelector(`${itemCategory} .selected-card h2`).innerHTML;
+}
+
+function getItemPrice(itemCategory) {
+   let priceString = document.querySelector(`${itemCategory} .selected-card h4`).innerHTML;
+   priceString = priceString.replaceAll("R$ ", "").replaceAll(",", ".");
+   let priceAsNumber = parseFloat(priceString);
+   return (priceAsNumber);
+
+   /* !!! !!! !!!
+   //const regex = /\D/g; //non-digit regex (nivea)
+   */
+}
 
 /* TODO: break in smaller functions! */
 function placeOrder() {
-   /*
-   location.href=encodeURI("https://wa.me/5581991689732?text=MSG_DE_TESTE_DrivenEats");
-   let chosenDish = document.querySelector(".dishes .selected-card");
-   let chosenBeverage = document.querySelector(".beverages .selected-card");
-   let chosenDessert = document.querySelector(".desserts .selected-card");
-   */
+   const dishName = getItemName(".dishes");
+   const beverageName = getItemName(".beverages");
+   const dessertName = getItemName(".desserts");
+   console.log("pratos: " + dishName + " + " + beverageName + " + " + dessertName);
 
-   const dishName = document.querySelector(".dishes .selected-card h2").innerHTML;
-   const beverageName = document.querySelector(".beverages .selected-card h2").innerHTML;
-   const dessertName = document.querySelector(".desserts .selected-card h2").innerHTML;
-   console.log(dishName + " + " + beverageName + " + " + dessertName);
-
-   let dishPrice = document.querySelector(".dishes .selected-card h4").innerHTML;
-   let beveragePrice = document.querySelector(".beverages .selected-card h4").innerHTML;
-   let dessertPrice = document.querySelector(".desserts .selected-card h4").innerHTML;
-   
-   //const regex = /\D/g; //non-digit regex (nivea)
-   //overwriting strings, removing non-digits:
-   dishPrice = dishPrice.replaceAll("R$ ", "").replaceAll(",", ".");
-   beveragePrice = beveragePrice.replaceAll("R$ ", "").replaceAll(",", ".");
-   dessertPrice = dessertPrice.replaceAll("R$ ", "").replaceAll(",", ".");
-   console.log(dishPrice + "+" + beveragePrice + "+" + dessertPrice);
-   
-   //getting correct decimals (not a nice way)
-   dishPrice = parseFloat(dishPrice);
-   beveragePrice = parseFloat(beveragePrice);
-   dessertPrice = parseFloat(dessertPrice);
-   console.log(dishPrice + " + " + beveragePrice + " + " + dessertPrice);
-
+   const dishPrice = getItemPrice(".dishes");
+   const beveragePrice = getItemPrice(".beverages");
+   const dessertPrice = getItemPrice(".desserts");
+   console.log("preços: " + dishPrice + " + " + beveragePrice + " + " + dessertPrice);
+     
    const finalPrice = (dishPrice + beveragePrice + dessertPrice);
-   console.log("valor R$ " + finalPrice);
+   console.log("valor total " + finalPrice);
 
-   let finalMessage = "Olá, gostaria de fazer o pedido:\n" +
+   const finalMessage = "Olá, gostaria de fazer o pedido:\n" +
    `- Prato: ${dishName}\n` +
    `- Bebida: ${beverageName}\n` +
    `- Sobremesa: ${dessertName}\n` +
    `Total: R$ ${finalPrice}`;
-
-   //console.log(finalMessage);
-   alert(finalMessage);
+   console.log(finalMessage);
+  
+   orderConfirmation(dishName, dishPrice, beverageName, beveragePrice, dessertName, dessertPrice);
+   /*
    finalMessage = "https://wa.me/5581991689732?text=" + finalMessage;
    location.href=encodeURI(finalMessage);
+   */
+}
+
+function orderConfirmation(diName, diPrice, bevName, bevPrice, deName, dePrice) {
+   let orderItems = document.querySelector(".confirmation-dialog");
+   orderItems.parentElement.classList.remove("hidden");
+   orderItems.querySelector(".dialog-dish").innerHTML = diName + diPrice;
+   orderItems.querySelector(".dialog-beverage").innerHTML = bevName + bevPrice;
+   orderItems.querySelector(".dialog-dessert").innerHTML = deName + dePrice;
+   orderItems.querySelector(".dialog-total").innerHTML = "Total: " + (diPrice+bevPrice+dePrice);
+
 }

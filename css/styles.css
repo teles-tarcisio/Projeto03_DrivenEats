@@ -220,11 +220,11 @@ h2, h3, h4 {
 /*  =====   BOTTOM-RIBBON  ===== */
 
 .confirmation-screen {
+    width: 100%;
+    height: 125%;
     position: absolute;
     top: 0;
     left: 0;
-    width: 414px;
-    height: 1526px;
     display: flex;
     background-color:rgba(255, 255, 255, 0.9);
     z-index: 30;
@@ -249,12 +249,11 @@ h2, h3, h4 {
     font-weight: 700;
     font-size: 22px;
 }
-.confirmation-dialog h3 {
+.confirmation-dialog h3, h4, h5, h6 {
     font-weight: 400;
     font-size: 22px;
+    text-justify: distribute;
 }
-
-
 
 .hidden {
     display: none;
