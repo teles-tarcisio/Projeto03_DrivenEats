@@ -60,19 +60,20 @@ function placeOrder() {
    let beveragePrice = document.querySelector(".beverages .selected-card h4").innerHTML;
    let dessertPrice = document.querySelector(".desserts .selected-card h4").innerHTML;
    
-   const regex = /\D/g; //non-digit regex (nivea)
+   //const regex = /\D/g; //non-digit regex (nivea)
    //overwriting strings, removing non-digits:
-   dishPrice = dishPrice.replaceAll(regex, '');
-   beveragePrice = beveragePrice.replaceAll(regex, '');
-   dessertPrice = dessertPrice.replaceAll(regex, '');
+   dishPrice = dishPrice.replaceAll("R$ ", "").replaceAll(",", ".");
+   beveragePrice = beveragePrice.replaceAll("R$ ", "").replaceAll(",", ".");
+   dessertPrice = dessertPrice.replaceAll("R$ ", "").replaceAll(",", ".");
+   console.log(dishPrice + "+" + beveragePrice + "+" + dessertPrice);
    
    //getting correct decimals (not a nice way)
-   const price1 = parseFloat(dishPrice)/100;
-   const price2 = parseFloat(beveragePrice)/100;
-   const price3 = parseFloat(dessertPrice)/100;
-   console.log(price1 + " + " + price2 + " + " + price3);
+   dishPrice = parseFloat(dishPrice);
+   beveragePrice = parseFloat(beveragePrice);
+   dessertPrice = parseFloat(dessertPrice);
+   console.log(dishPrice + " + " + beveragePrice + " + " + dessertPrice);
 
-   let finalPrice = (price1 + price2 + price3).toFixed(2);
+   const finalPrice = (dishPrice + beveragePrice + dessertPrice);
    console.log("valor R$ " + finalPrice);
 
    let finalMessage = "Olá, gostaria de fazer o pedido:\n" +

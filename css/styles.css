@@ -215,8 +215,37 @@ h2, h3, h4 {
     color: #ffffff;
 }
 
+
+
+/*  =====   BOTTOM-RIBBON  ===== */
+
+.confirmation-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 414px;
+    height: 1526px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(255, 255, 255, 0.9);
+    z-index: 30;
+}
+.confirmation-screen h2 {
+    font-weight: 700;
+    font-size: 22px;
+}
+.confirmation-screen h3 {
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.confirmation-dialog {
+    display: flex;
+    flex-direction: column;
+}
+
 .hidden {
     display: none;
 }
-
-/*  =====   BOTTOM-RIBBON  ===== */
